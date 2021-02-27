@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{84C6A03E-B9B0-4A70-8B7E-E42543891989}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="UWPCL.dproj">
+            <Dependencies>Demo.dproj</Dependencies>
+        </Projects>
+        <Projects Include="Demo.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="UWPCL" DependsOnTargets="Demo">
+        <MSBuild Projects="UWPCL.dproj"/>
+    </Target>
+    <Target Name="UWPCL:Clean" DependsOnTargets="Demo:Clean">
+        <MSBuild Projects="UWPCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="UWPCL:Make" DependsOnTargets="Demo:Make">
+        <MSBuild Projects="UWPCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Demo">
+        <MSBuild Projects="Demo.dproj"/>
+    </Target>
+    <Target Name="Demo:Clean">
+        <MSBuild Projects="Demo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Demo:Make">
+        <MSBuild Projects="Demo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="UWPCL;Demo"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="UWPCL:Clean;Demo:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="UWPCL:Make;Demo:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

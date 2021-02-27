@@ -1,0 +1,21 @@
+﻿program Demo;
+
+uses
+  Vcl.Forms,
+  demoproject in 'demoproject.pas' {Form1},
+  UWP.Form in 'src\UWP.Form.pas',
+  UWP.Classes in 'src\UWP.Classes.pas',
+  UWP.ColorManager in 'src\UWP.ColorManager.pas',
+  UWP.Colors in 'src\UWP.Colors.pas',
+  UWP.SystemSettings in 'src\UWP.SystemSettings.pas',
+  UWP.Types in 'src\UWP.Types.pas',
+  UWP.Utils in 'src\UWP.Utils.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

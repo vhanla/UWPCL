@@ -1,0 +1,67 @@
+package UWPCL;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  vcl,
+  vclimg;
+
+contains
+  UWP.Form in 'src\UWP.Form.pas',
+  UWP.Utils in 'src\UWP.Utils.pas',
+  UWP.SystemSettings in 'src\UWP.SystemSettings.pas',
+  UWP.Colors in 'src\UWP.Colors.pas',
+  UWP.ColorManager in 'src\UWP.ColorManager.pas',
+  UWP.Classes in 'src\UWP.Classes.pas',
+  UWP.Types in 'src\UWP.Types.pas',
+  UWP_RegisterPackage in 'src\UWP_RegisterPackage.pas',
+  UWP.FormShadow in 'src\UWP.FormShadow.pas' {frmShadow},
+  UWP.Caption in 'src\UWP.Caption.pas',
+  UWP.Graphics in 'src\UWP.Graphics.pas',
+  UWP.Slider in 'src\UWP.Slider.pas',
+  UWP.Hotkey in 'src\UWP.Hotkey.pas',
+  UWP.Downloader in 'src\UWP.Downloader.pas',
+  UWP.IntAnimation in 'src\UWP.IntAnimation.pas',
+  UWP.IntAnimation.Collection in 'src\UWP.IntAnimation.Collection.pas',
+  UWP.ListButton in 'src\UWP.ListButton.pas',
+  UWP.FontIcons in 'src\UWP.FontIcons.pas',
+  UWP.Edit in 'src\UWP.Edit.pas',
+  UWP.Button in 'src\UWP.Button.pas',
+  UWP.QuickButton in 'src\UWP.QuickButton.pas',
+  UWP.Text in 'src\UWP.Text.pas',
+  UWP.ScrollBox in 'src\UWP.ScrollBox.pas',
+  UWP.Tooltip in 'src\UWP.Tooltip.pas',
+  UWP.ProgressBar in 'src\UWP.ProgressBar.pas',
+  UWP.LinkLabel in 'src\UWP.LinkLabel.pas',
+  UWP.Panel in 'src\UWP.Panel.pas',
+  UWP.HttpUtils in 'src\UWP.HttpUtils.pas',
+  UWP.D2D1Canvas in 'src\UWP.D2D1Canvas.pas',
+  UWP.FluentForm in 'src\UWP.FluentForm.pas';
+
+end.
